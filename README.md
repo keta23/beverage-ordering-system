@@ -84,4 +84,4 @@ This starts the interactive ordering system, where users can:
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source.
