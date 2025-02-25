@@ -1,94 +1,88 @@
-Beverage Ordering System (Decorator Pattern)
+# Beverage Ordering System (Decorator Pattern)
 
-Overview
+## Overview
 
-This Java project implements a beverage ordering system using the Decorator Design Pattern. It allows users to order beverages like tea and coffee and customize them with add-ons such as milk and sugar.
+This Java project implements a beverage ordering system using the **Decorator Design Pattern**. It allows users to order beverages like **tea** and **coffee** and customize them with add-ons such as **milk** and **sugar**.
 
-Design Pattern Used
+## Design Pattern Used
 
-The Decorator Pattern is used to dynamically add functionalities (add-ons) to the base beverages without modifying their core implementation. This promotes flexibility and scalability.
+The **Decorator Pattern** is used to dynamically add functionalities (add-ons) to the base beverages without modifying their core implementation. This promotes flexibility and scalability.
 
-Class Structure
+## Class Structure
 
-Interface: Beverage
+### Interface: `Beverage`
 
+```java
 public interface Beverage {
     String getDescription();
     double getCost();
 }
+```
 
-Concrete Classes
+### Concrete Classes
 
-Coffee: Implements Beverage.
+- \`\`: Implements `Beverage`.
+- \`\`: Implements `Beverage`.
 
-Tea: Implements Beverage.
+### Decorators
 
-Decorators
+- \`\`: Adds milk to a beverage.
+- \`\`: Adds sugar to a beverage.
 
-MilkDecorator: Adds milk to a beverage.
+Each decorator class implements `Beverage` and extends the functionality of an existing beverage.
 
-SugarDecorator: Adds sugar to a beverage.
+## Main Entry Point
 
-Each decorator class implements Beverage and extends the functionality of an existing beverage.
+### `Main.java`
 
-Main Entry Point
-
-Main.java
-
+```java
 public class Main {
     public static void main(String[] args) {
         OrderController.getInstance().runOrderApp();
     }
 }
+```
 
-OrderController.java
+### `OrderController.java`
 
-The OrderController class is responsible for handling the order workflow, including beverage selection and add-on customization.
+The `OrderController` class is responsible for handling the order workflow, including beverage selection and add-on customization.
 
-Implements Singleton pattern to ensure a single instance.
+- Implements Singleton pattern to ensure a single instance.
+- Uses `OrderService` to manage beverage creation and customization.
+- Provides a menu-driven interface for user interaction.
 
-Uses OrderService to manage beverage creation and customization.
+## Usage Example
 
-Provides a menu-driven interface for user interaction.
-
-Usage Example
-
+```java
 OrderController.getInstance().runOrderApp();
+```
 
 This starts the interactive ordering system, where users can:
 
-Select a base beverage (Tea or Coffee)
+- Select a **base beverage** (Tea or Coffee)
+- Choose **add-ons** (Milk or Sugar)
 
-Choose add-ons (Milk or Sugar)
+## Features
 
-Features
+- Order **Coffee** or **Tea**
+- Add **Milk** or **Sugar** as needed
+- Uses **Decorator Pattern** for flexibility
+- Singleton **OrderController** for centralized order management
+- Menu-based user interaction
 
-Order Coffee or Tea
+## How to Run
 
-Add Milk or Sugar as needed
+1. Clone the repository.
+2. Compile Java files: `javac *.java`
+3. Run the program: `java Main`
 
-Uses Decorator Pattern for flexibility
+## Future Enhancements
 
-Singleton OrderController for centralized order management
+- Support for more beverage types
+- Additional add-ons like honey, lemon, etc.
+- GUI-based ordering system
 
-Menu-based user interaction
+## License
 
-How to Run
+This project is open-source and available under the MIT License.
 
-Clone the repository.
-
-Compile Java files: javac *.java
-
-Run the program: java Main
-
-Future Enhancements
-
-Support for more beverage types
-
-Additional add-ons like honey, lemon, etc.
-
-GUI-based ordering system
-
-License
-
-This project is open-source.
